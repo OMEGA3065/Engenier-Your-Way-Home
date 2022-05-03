@@ -1,17 +1,155 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://assets/player/player_idle_pos_1.png" type="Texture" id=1]
 [ext_resource path="res://src/actors/player.gd" type="Script" id=2]
+[ext_resource path="res://assets/player/player_idle_pos_7.png" type="Texture" id=3]
+[ext_resource path="res://assets/player/player_walking_pos_1.png" type="Texture" id=4]
+[ext_resource path="res://assets/player/player_idle_pos_6.png" type="Texture" id=5]
+[ext_resource path="res://assets/player/player_idle_pos_5.png" type="Texture" id=6]
+[ext_resource path="res://assets/player/player_idle_pos_4.png" type="Texture" id=7]
+[ext_resource path="res://assets/player/player_idle_pos_3.png" type="Texture" id=8]
+[ext_resource path="res://assets/player/player_idle_pos_2.png" type="Texture" id=9]
+[ext_resource path="res://assets/player/player_idle_pos_8.png" type="Texture" id=10]
+[ext_resource path="res://assets/player/player_walking_pos_7.png" type="Texture" id=11]
+[ext_resource path="res://assets/player/player_walking_pos_5.png" type="Texture" id=12]
+[ext_resource path="res://assets/player/player_walking_pos_3.png" type="Texture" id=13]
 
 [sub_resource type="CapsuleShape2D" id=1]
 radius = 10.4833
 height = 16.6732
 
-[node name="player" type="KinematicBody2D"]
-script = ExtResource( 2 )
+[sub_resource type="AtlasTexture" id=2]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 16, 48 )
 
-[node name="player_idle_pos_1" type="Sprite" parent="."]
-texture = ExtResource( 1 )
+[sub_resource type="AtlasTexture" id=3]
+flags = 4
+atlas = ExtResource( 11 )
+region = Rect2( 16, 0, 16, 48 )
+
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 16, 48 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 16, 0, 16, 48 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 16, 48 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 4 )
+region = Rect2( 16, 0, 16, 48 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 16, 0, 16, 48 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 16, 48 )
+
+[sub_resource type="SpriteFrames" id=10]
+animations = [ {
+"frames": [  ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "idle_pos_4",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "walking_pos_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "idle_pos_3",
+"speed": 2.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "walking_pos_7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "idle_pos_5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "walking_pos_8",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "walking_pos_5",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "walking_pos_1",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 1 ) ],
+"loop": true,
+"name": "idle_pos_1",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "idle_pos_2",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "idle_pos_8",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
+"loop": true,
+"name": "walking_pos_3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 3 ) ],
+"loop": true,
+"name": "idle_pos_7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 9 ) ],
+"loop": true,
+"name": "walking_pos_2",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "walking_pos_6",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "idle_pos_6",
+"speed": 5.0
+} ]
+
+[node name="player" type="KinematicBody2D"]
+collision_mask = 5
+script = ExtResource( 2 )
+speed = 5000
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, 2.11893 )
@@ -24,3 +162,7 @@ zoom = Vector2( 0.4, 0.4 )
 drag_margin_h_enabled = true
 drag_margin_v_enabled = true
 smoothing_enabled = true
+
+[node name="player_anim" type="AnimatedSprite" parent="."]
+frames = SubResource( 10 )
+animation = "walking_pos_1"
