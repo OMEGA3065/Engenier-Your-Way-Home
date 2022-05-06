@@ -7,7 +7,7 @@ var velocity = Vector2.ZERO
 
 onready var player_anim_sprite = get_node("player_anim")
 
-export var speed : int = 100
+export var speed : int = 5000
 
 func _physics_process(delta):
 	print(delta*speed)
@@ -25,57 +25,57 @@ func _physics_process(delta):
 	and not Input.is_action_pressed("up") 
 	and not Input.is_action_pressed("down")):
 		player_anim_sprite.play("walking_pos_1")
-		velocity = Vector2(speed*delta, 0)
+		velocity = Vector2(speed, 0)
 		player_direction = 1
 	elif (not Input.is_action_pressed("right") 
 	and Input.is_action_pressed("left") 
 	and not Input.is_action_pressed("up") 
 	and not Input.is_action_pressed("down")):
 		player_anim_sprite.play("walking_pos_5")
-		velocity = Vector2(-speed*delta, 0)
+		velocity = Vector2(-speed, 0)
 		player_direction = 5
 	elif (not Input.is_action_pressed("right") 
 	and not Input.is_action_pressed("left") 
 	and Input.is_action_pressed("up") 
 	and not Input.is_action_pressed("down")):
 		player_anim_sprite.play("walking_pos_7")
-		velocity = Vector2(0, -speed*delta)
+		velocity = Vector2(0, -speed)
 		player_direction = 7
 	elif (not Input.is_action_pressed("right") 
 	and not Input.is_action_pressed("left") 
 	and not Input.is_action_pressed("up") 
 	and Input.is_action_pressed("down")):
 		player_anim_sprite.play("walking_pos_3")
-		velocity = Vector2(0, speed*delta)
+		velocity = Vector2(0, speed)
 		player_direction = 3
 	elif (Input.is_action_pressed("right") 
 	and not Input.is_action_pressed("left") 
 	and not Input.is_action_pressed("up") 
 	and Input.is_action_pressed("down")):
-		player_anim_sprite.play("walking_pos_2")
-		velocity = Vector2(speed*delta, speed*delta)
-		player_direction = 2
+		player_anim_sprite.play("walking_pos_3")
+		velocity = Vector2(speed, (speed/3*2))
+		player_direction = 3
 	elif (Input.is_action_pressed("right") 
 	and not Input.is_action_pressed("left") 
 	and Input.is_action_pressed("up") 
 	and not Input.is_action_pressed("down")):
-		player_anim_sprite.play("walking_pos_8")
-		velocity = Vector2(speed*delta, -speed*delta)
-		player_direction = 8
+		player_anim_sprite.play("walking_pos_7")
+		velocity = Vector2(speed, -(speed/3*2))
+		player_direction = 7
 	elif (not Input.is_action_pressed("right") 
 		and Input.is_action_pressed("left") 
 		and Input.is_action_pressed("up") 
 		and not Input.is_action_pressed("down")):
-		player_anim_sprite.play("walking_pos_6")
-		velocity = Vector2(-speed*delta, -speed*delta)
-		player_direction = 6
+		player_anim_sprite.play("walking_pos_7")
+		velocity = Vector2(-speed, -(speed/3*2))
+		player_direction = 7
 	elif (not Input.is_action_pressed("right") 
 		and Input.is_action_pressed("left") 
 		and not Input.is_action_pressed("up") 
 		and Input.is_action_pressed("down")):
-		player_anim_sprite.play("walking_pos_4")
-		velocity = Vector2(-speed*delta, speed*delta)
-		player_direction = 4
+		player_anim_sprite.play("walking_pos_3")
+		velocity = Vector2(-speed, (speed/3*2))
+		player_direction = 3
 	if (player_state == "idle"):
 		if (player_direction == 1):
 			player_anim_sprite.play("idle_pos_1")
@@ -93,4 +93,5 @@ func _physics_process(delta):
 			player_anim_sprite.play("idle_pos_7")
 		elif (player_direction == 8):
 			player_anim_sprite.play("idle_pos_8")
+
 	
