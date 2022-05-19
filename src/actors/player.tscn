@@ -15,47 +15,47 @@
 [ext_resource path="res://assets/player/player_walking_pos_3.png" type="Texture" id=13]
 
 [sub_resource type="CapsuleShape2D" id=1]
-radius = 10.4833
-height = 16.6732
+radius = 10.8961
+height = 5.15936
 
 [sub_resource type="AtlasTexture" id=2]
 flags = 4
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 0, 0, 16, 48 )
 
 [sub_resource type="AtlasTexture" id=3]
 flags = 4
-atlas = ExtResource( 12 )
+atlas = ExtResource( 11 )
 region = Rect2( 16, 0, 16, 48 )
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 0, 0, 16, 48 )
+atlas = ExtResource( 13 )
+region = Rect2( 16, 0, 16, 48 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 4
-atlas = ExtResource( 4 )
-region = Rect2( 16, 0, 16, 48 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 4
-atlas = ExtResource( 13 )
-region = Rect2( 16, 0, 16, 48 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 4
 atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 16, 48 )
 
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 0, 0, 16, 48 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 12 )
+region = Rect2( 16, 0, 16, 48 )
+
 [sub_resource type="AtlasTexture" id=8]
 flags = 4
-atlas = ExtResource( 11 )
+atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 16, 48 )
 
 [sub_resource type="AtlasTexture" id=9]
 flags = 4
-atlas = ExtResource( 11 )
+atlas = ExtResource( 4 )
 region = Rect2( 16, 0, 16, 48 )
 
 [sub_resource type="SpriteFrames" id=10]
@@ -63,16 +63,6 @@ animations = [ {
 "frames": [  ],
 "loop": true,
 "name": "default",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "idle_pos_4",
-"speed": 2.0
-}, {
-"frames": [ ExtResource( 5 ) ],
-"loop": true,
-"name": "walking_pos_6",
 "speed": 5.0
 }, {
 "frames": [ ExtResource( 5 ) ],
@@ -84,6 +74,51 @@ animations = [ {
 "loop": true,
 "name": "idle_pos_7",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 5 ) ],
+"loop": true,
+"name": "walking_pos_6",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "walking_pos_7",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 6 ) ],
+"loop": true,
+"name": "idle_pos_5",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "walking_pos_8",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "idle_pos_4",
+"speed": 2.0
+}, {
+"frames": [ ExtResource( 10 ) ],
+"loop": true,
+"name": "idle_pos_8",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "walking_pos_3",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 7 ) ],
+"loop": true,
+"name": "walking_pos_4",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 8 ) ],
+"loop": true,
+"name": "idle_pos_3",
+"speed": 2.0
 }, {
 "frames": [ ExtResource( 9 ) ],
 "loop": true,
@@ -100,49 +135,14 @@ animations = [ {
 "name": "idle_pos_2",
 "speed": 2.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "walking_pos_5",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
-"loop": true,
-"name": "walking_pos_1",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "idle_pos_8",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "walking_pos_3",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 7 ) ],
-"loop": true,
-"name": "walking_pos_4",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 8 ) ],
-"loop": true,
-"name": "idle_pos_3",
-"speed": 2.0
-}, {
 "frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "walking_pos_7",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 6 ) ],
-"loop": true,
-"name": "idle_pos_5",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 10 ) ],
-"loop": true,
-"name": "walking_pos_8",
+"name": "walking_pos_1",
 "speed": 5.0
 } ]
 
@@ -152,7 +152,7 @@ collision_mask = 13
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2( 0, 2.11893 )
+position = Vector2( 0, 8.57309 )
 scale = Vector2( 0.719999, 1 )
 shape = SubResource( 1 )
 
@@ -165,5 +165,6 @@ drag_margin_v_enabled = true
 smoothing_enabled = true
 
 [node name="player_anim" type="AnimatedSprite" parent="."]
+position = Vector2( 0, 0.748306 )
 frames = SubResource( 10 )
 animation = "walking_pos_1"
